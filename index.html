@@ -3,67 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <title>Kunata</title>
+
 <style>
 body {
-  background: pink;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffb6c1, #ffc0cb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
   text-align: center;
-  padding-top: 100px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
 }
 
 button {
-  font-size: 20px;
-  padding: 15px 30px;
-  border-radius: 20px;
+  font-size: 28px;
+  padding: 15px 40px;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
+  margin: 15px;
+}
+
+#yes {
+  background-color: #ff3366;
+  color: white;
 }
 
 #no {
   position: absolute;
+  background-color: white;
 }
 
-#yes {
-  background-color: red;
-  color: white;
+#gif {
+  width: 350px;
+  margin-top: 30px;
+  border-radius: 25px;
+  display: none;
 }
 
 #message {
-  margin-top: 20px;
-  font-size: 22px;
+  font-size: 45px;
+  margin-top: 25px;
   font-weight: bold;
-}
-
-img {
-  margin-top: 20px;
-  width: 250px;
-  border-radius: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<h1 id="question">Willst du meine kunata sein?? 💖</h1>
+<div class="container">
+  <h1 id="question">Willst du meine kunata sein?? 💖</h1>
 
-<button id="yes" onclick="yesClick()">Ja</button>
-<button id="no" onclick="noClick()">Nein</button>
+  <button id="yes" onclick="yesClick()">Ja</button>
+  <button id="no" onclick="noClick()">Nein</button>
 
-<p id="message"></p>
-<img id="gif" style="display:none;" />
+  <div id="message"></div>
+  <img id="gif">
+</div>
 
 <script>
 function moveButton() {
-  const x = Math.random() * (window.innerWidth - 150);
-  const y = Math.random() * (window.innerHeight - 150);
+  const x = Math.random() * (window.innerWidth - 200);
+  const y = Math.random() * (window.innerHeight - 200);
   document.getElementById("no").style.left = x + "px";
   document.getElementById("no").style.top = y + "px";
 }
 
 function yesClick() {
-  document.getElementById("question").innerText = "Jeeeej endlich, jetzt habe ich eine Schwester 💖🥰";
-  document.getElementById("message").innerText = "Ich liebe dich kunata 😍";
-  document.getElementById("gif").src = "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif";
+  document.getElementById("question").innerText = "Jeeeej endlich, jetzt habe ich eine Schwester 💖";
+  document.getElementById("message").innerText = "Auf eine schöne Zukunft ✨💞";
+  document.getElementById("gif").src = "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif";
   document.getElementById("gif").style.display = "block";
 }
 
